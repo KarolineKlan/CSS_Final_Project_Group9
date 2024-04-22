@@ -1,5 +1,5 @@
 baseURL = "https://karolineklan.github.io/CSS_Final_Project_Group9/"
-title = "The Food items network"
+title = "The Food Items Network"
 description = "This is a project description"
 relativeURLs = true
 theme = "theme" 
