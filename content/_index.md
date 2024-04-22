@@ -1,5 +1,5 @@
 ---
-title: JDet her er sejt - gkri er kay
+title: Investigating items that are frequently bought together in Danish supermarkets
 layout: single
 next: data-description
 ---

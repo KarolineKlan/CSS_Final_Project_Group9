@@ -1,10 +1,10 @@
 baseURL = "https://karolineklan.github.io/CSS_Final_Project_Group9/"
-title = "Project Title"
+title = "The Food items network"
 description = "This is a project description"
 relativeURLs = true
 theme = "theme" 
 [params]
-    authors = ["Karoline Klan Hansen", "Kristoffer", "Jacob"]
+    authors = ["Karoline Klan Hansen", "Kristoffer Helms Kjaer", "Jacob Seerup"]
     notebook = "/explainer-notebook.html"
     data = "https://drive.google.com"
     github = "https://github.com/KarolineKlan/CSS_Final_Project_Group9"
