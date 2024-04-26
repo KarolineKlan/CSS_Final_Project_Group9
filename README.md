@@ -14,7 +14,7 @@ The project aims to investigate the network of food items frequently bought toge
 
 A [**project website**](https://karolineklan.github.io/CSS_Final_Project_Group9/) has been deployed to present the findings caried out in the study. Go to this to find out more.
 
-The website is build using [***this template***](https://github.com/peterampazzo/project-website-template/generate).
+The website is build using [***this template***](https://github.com/lalessan/project-website-template).
 
 
 
