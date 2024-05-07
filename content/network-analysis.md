@@ -19,6 +19,15 @@ The goal of this project is to investigate the real life network of food-items t
 
 Each link between the nodes represent if a product is in the top 10 list of frequently bought items with another product. When using the [frequently bought together endpoint](https://developer.sallinggroup.com/api-reference#frequently-bought-together) from the [Salling Group API](https://developer.sallinggroup.com/api-reference) every time an item is called a list of the 10 items that most often is bought together with the product ordered by descending relevance is returned. 
 
+
+
+
+<figure>
+    <img src="/images/Degree_Distribution_Plot.png" width="100%" alt="Scraping">
+    <figcaption style="text-align:center;font-style: italic;">Figure. 3: </figcaption>
+</figure>
+
+
 127323
 [129632, 129633, 19434, 71512, 92948, 87131, 19721, 18364, 91334, 41414]
 
