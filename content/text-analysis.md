@@ -3,21 +3,7 @@ title: Text analysis
 prev: network-analysis
 ---
 
-The text used for the text analysis were collected from web-scraping description of products of the [BilkaToGo](https://www.bilkatogo.dk/) website. The descriptions are a small text about a certain procuts typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in.  The website is tied to a database and the structure is heavily based on Javascript making the web-scraping a tideous and long process. However, with the help of the 'sellenium' python package, which interacts with the website, we were then able to webscrape the relevant text data. By looking at the website structure, we understood that the products are divided into categories e.g. 'Frugt og Grønt', 'Kød' etc. so we could control which products we would like to include in the analysis. This project focuses only on categories regarding food products.
-Some products also have a description regarding the brand of the products which we leave out of the data-collection. 
-
-When working with text analysis tools it is essential that we tokenize the text, such that we break the text into more managable pieces for NLP applications. This is done with nltk python package that can remove unwanted tokens such as danish stop words, punctuation etc. 
-The distribution of the tokenized text can be seen below. note that we added a stop words "kan"(can) to the stopwords as this is a regular expression in danish. 
-
-<figure>
-    <img src="/images/token_distribution.png" width="80%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 2: Distribution over the tokenized food descriptions lengths by word. It can be seen that it follows a normal distribution.  </figcaption>
-</figure>
-
->  This distribution of tokenized descriptions has a mean of 33.24 a standard deviation of 10.11 and a median of 32. Which means that with tokenizing the text, the mean  of the desription length is decreased by ~25 words from the non-tokenized text.
-
-
-With this, we would like to get an insight in the consumer buying patterns and we could get this insight by analysing the the words that characterize certain natural communities within the frequently-bought-together network. Here, we might get som insight in what makes products frequently bought together. In order to do this, we use the TF-IDF scores on the tokenized product descriptions.
+We would like to get an insight in the consumer buying patterns and we could get this insight by analyzing the the words that characterize certain natural communities within the frequently-bought-together network. Here, we might get som insight in what makes products frequently bought together. In order to do this, we use the TF-IDF scores on the tokenized product descriptions.
 These TF-IDF scores of words help us identify what words specifically are unique for each community.
 The TF-IDF scores of words for the top 9 communities can be seen below:
 
@@ -149,7 +135,6 @@ We set up a loop classifying each community based on the top 100 TF-IDF words wi
 > To see a wordcloud for all the 25 different communities you can look at our [Explainer Notebook](explainer-notebook.html) under the text analysis.
 
 This was done in order to label get an unbiased label on each community based on 100 words which that many words can be somewhat of a challenge to do for a human. Furthermore, we can quickly see what products that link communities together and what type of commmunities the products link together with a one word category. You can read more about this analysis in the [Explainer Notebook](explainer-notebook.html) under the network analysis.
-
 
 <figure>
     <img src="/images/betweenness.png" width="80%" alt="Scraping">
