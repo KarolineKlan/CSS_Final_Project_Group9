@@ -41,7 +41,7 @@ From the degree distribution it appears that the Foods Network (in green) resemb
  The high-degree nodes in the Foods Network likely represent items that are versatile or have broad appeal, causing them to appear frequently on the "frequently bought together" list across various other items. For example, common ingredients like milk, bread, or eggs might be expected to have higher degrees. We delve further into the specific items in the next sections.
 
 # __2. Assortativity__
-Assortativity can help give insights in what items tend to get bought together, as it gives insights into the tendency of how nodes connect to other nodes that are similar or dissimilar in some defined way. In this section we will look into degree assortativity and assortativity that is related to specific attributes, in our case we will be looking at the attributes 'Category', 'Ecology' and 'Price'.
+Assortativity can help give insights in what items tend to get bought together, as explains a preference for a network's nodes to attach to others that are similar. In this section we will look into degree assortativity and assortativity that is related to specific attributes, in our case we will be looking at the attributes 'Category', 'Ecology' and 'Price'.
 
 In order to compare if the assortativity of the food-network is significant from random we compare it to 100 different random networks, where the assortativity has been broken by a configuration model that uses the _double edge swap_ algorithm to ensure each node retains its original degree but with altered connections.
 
@@ -55,21 +55,24 @@ The results from the analysis is shown in the table below, and the details can b
 | Price Assortativity Coefficient                   | 0.087        | -0.000                 |
 <div style="text-align:center;font-style: italic;font-size:smaller;">Table 1. Assortativity coefficients of the food network compared to the average of the 100 random networks </div>
 
-Our findings show that the assortativity coefficients of the random network is very low, close to zero which we would expect.
+Our findings show that the average assortativity coefficients of the random network is very low, close to zero which is also what we would expect.
+
+If the degree assortativity coefficient is high it mean that nodes tend to be connected with other nodes with similar degree values. In our results we found this value to be very small. Although it is modest it is still different from random indicating that there might be a slight preference for items with similar degrees of connectivity to be purchased together. For example popular items might commonly appear in the same baskets. The same applies to the Price assortativity where the value is pretty low, but still indicating that expensive products might tend to get purchased with other expensive These results however is not as convincing as for the Category and Ecology Assortativity.
 
 When considering the attribute assortativity on the category and the ecology attribute it is apparent that these values are very significant different than the random. This suggest that products within the same categories tend to get purchased together. Additionally eco products tend to get purchased with other eco products as well, which is also what we could expect considering what we anticipate from certain consumer behaviours.
 
-We selected a random example of an eco-product with the product ID 
+We selected a random example of an eco-product to inspect its neighbors. The Ecological minced chicken with the product ID 71136 and its neighbors is seen below:
 
 <figure>
     <img src="/images/Ecology_assort.png" width="70%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 4:  . </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 4: An example of an ecological product and its 10 neighbors. </figcaption>
 </figure>
-
+Figure 4 illustrates how an ecological product is connected to other eco-products, as all its neighbors in this example are also ecological. Additionally, this demonstrates that many neighbors of this product within the meat category are also in the same category. 
+This example supports the conclusions drawn from the assortativity analysis, indicating a general trend in the entire network where items within the same category and eco-products tend to be purchased together.
 
 # __3. Communities__
 
-
+By identifying communities, we can gain insights into how the certain types of foods are grouped together. This helps in understanding purchasing patterns and preferences that consumers make when going grocery shopping. Because the food
 
 <figure>
     <img src="/images/Graph_communities.png" width="60%" alt="Scraping">
