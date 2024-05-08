@@ -12,7 +12,7 @@ The below figure shows what specific attributes was collected in the scraping:
 
 <figure>
     <img src="/images/Scraping.png" width="100%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;">Figure. 1: Visual representation of the process of collecting the data using webscraping tools on BilkaToGo</figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 1: Visual representation of the process of collecting the data using webscraping tools on BilkaToGo</figcaption>
 </figure>
 
 
@@ -22,7 +22,7 @@ Each attribute was collected and saved to CSV files, whereafter data cleaning an
 
 <figure>
     <img src="/images/concated_chart_categories.png" width="90%" alt="Distribution of the products in the different categories">
-    <figcaption style="text-align:center;font-style: italic;">Figure 2: Distribution of the products in the different categories</figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure 2: Distribution of the products in the different categories</figcaption>
 </figure>
 
 
@@ -38,4 +38,4 @@ See the [**Explainer Notebook**](explainer-notebook.html) for more details in ho
 
 # The final preprocessed and cleaned data
 
-After the cleaning proces a dataset consisting of 9.755 food products where each product constitute a node in a network with 74.180 links. The data can be downloaded from [**INDSÆT LINK TIL DATASET**]()
+After the cleaning proces a dataset consisting of 9.755 food products where each product constitute a node in a network with 74.180 links. The data can be downloaded from [**INDSÆT LINK TIL DATASET**](). One important note of the collected data is that the items on the BilkaToGo is updated and changed on an ongoing basis, so some of the items in the data that was collected on the **17th of April 2024** might not be on the website today. 
