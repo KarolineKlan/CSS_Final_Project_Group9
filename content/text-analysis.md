@@ -65,7 +65,7 @@ And the top 3 most frequently bought togehter product for each of those communit
 | sportssodavand sukkerfri  |    creme fraiche dressing                |       appelsinmarmelade     |
 
 
-We see some different patterns that we can associate from each other in each communities. We some clear ones in e.g. community 24 that has ecology, and community 19 which has a lot of top words that can make this community be interperated like a candy-like community with top words like 'mix', 'liquorice', 'milk-chocolate' etc. But to get a better overview of the top words within each community, let's look at the top TF-IDF words in word clouds for the top 9 communities:
+We see some different patterns that we can associate from each other in each communities. We see some clear ones in e.g. community 24 that has ecology, and community 19 which has a lot of top words that can make this community be interperated as a candy-like community, with top words like 'mix', 'liquorice', 'milk-chocolate' etc. But to get a better overview of the top words within each community, let's look at the top TF-IDF words in word clouds for the top 9 communities:
 
 <figure>
     <img src="/images/wordcloud_9.png" width="80%" alt="Scraping">

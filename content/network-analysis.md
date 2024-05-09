@@ -94,4 +94,13 @@ By identifying communities, we can gain insights into how the certain types of f
 
 # __4. Centrality__
 
+The centrality measure give us insight in which nodes play a more dominant role in the network. We use two different centrality measures; closeness and betweenness centrality. Closeness centrality rank each node in the network by how "far" it has to travel to reach other nodes in the network, meaning nodes that do not need to travel far is more central in the network. The score itself is not that relevant for us, as we would like to focus on which nodes that acts as the central hubs in our network. 
+
+The betweenness centrality tell us how many times each node act as a part of the shortest path between two nodes in the network. The nodes with high betweenness score fall in the shortest path between alot of nodes in the network and is therefore considered central. 
+We would like to match the 15 highest scoring nodes from each of the two metrics to see if it is the same nodes that score highest. 
+
+** indsæt tabel**
+
+Since these nodes act as central hubs, we want to investigate how many, and which communities each node connects with, as it will give insights as to how these wares are used in different ways. 
+
 JACK SKRIVER HER!
