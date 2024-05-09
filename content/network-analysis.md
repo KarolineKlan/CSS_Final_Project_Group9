@@ -99,7 +99,23 @@ The centrality measure give us insight in which nodes play a more dominant role 
 The betweenness centrality tell us how many times each node act as a part of the shortest path between two nodes in the network. The nodes with high betweenness score fall in the shortest path between alot of nodes in the network and is therefore considered central. 
 We would like to match the 15 highest scoring nodes from each of the two metrics to see if it is the same nodes that score highest. 
 
-** indsæt tabel**
+| Closeness centrality                | Betweenness centrality                   |
+|-------------------------------------|------------------------------------------|
+| agurk                               | agurk                                    |
+| agurk øko                           | smørbar                                  |
+| finvalsede havregryn øko            | mørk pålægschokolade 53% kakao øko       |
+| æg m/l øko                          | agurk øko                                |
+| smørbar                             | æg m/l øko                               |
+| hvedemel øko                        | finvalsede havregryn øko                 |
+| hakkede tomater øko                 | skrabeæg m/l                             |
+| bananer 4pak øko                    | remoulade øko                            |
+| skrabeæg m/l                        | hvedemel øko                             |
+| rosiner øko                         | bananer                                  |
+| peberfrugter røde                   | hakkede tomater øko                      |
+| bananer                             | bananer 4 pak øko                        |
+| remoulade øko                       | peberfrugter røde                        |
+| mørk pålægschokolade 53% kakao øko  | tonic                                    |
+
 
 Since these nodes act as central hubs, we want to investigate how many, and which communities each node connects with, as it will give insights as to how these wares are used in different ways. 
 
