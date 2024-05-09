@@ -52,14 +52,14 @@ The results from the analysis is shown in the table below, and the details can b
 | Degree Assortativity Coefficient                  | 0.054        | -0.034                 |
 | Category Assortativity Coefficient                | 0.494        | -0.001                 |
 | Ecology Assortativity Coefficient                 | 0.595        | -0.002                 |
-| Price Assortativity Coefficient                   | 0.087        | -0.000                 |
+| Price Assortativity Coefficient                   | 0.355        | -0.001                 |
 <div style="text-align:center;font-style: italic;font-size:smaller;">Table 1. Assortativity coefficients of the food network compared to the average of the 100 random networks </div>
 
 Our findings show that the average assortativity coefficients of the random network is very low, close to zero which is also what we would expect.
 
-If the degree assortativity coefficient is high it mean that nodes tend to be connected with other nodes with similar degree values. In our results we found this value to be very small. Although it is modest it is still different from random indicating that there might be a slight preference for items with similar degrees of connectivity to be purchased together. For example popular items might commonly appear in the same baskets. The same applies to the Price assortativity where the value is pretty low, but still indicating that expensive products might tend to get purchased with other expensive These results however is not as convincing as for the Category and Ecology Assortativity.
+If the degree assortativity coefficient is high it mean that nodes tend to be connected with other nodes with similar degree values. In our results we found this value to be very small. Although it is modest it is still different from random indicating that there might be a slight preference for items with similar degrees of connectivity to be purchased together. For example popular items might commonly appear in the same baskets. These results however is not as convincing as for the Category and Ecology Assortativity.
 
-When considering the attribute assortativity on the category and the ecology attribute it is apparent that these values are very significant different than the random. This suggest that products within the same categories tend to get purchased together. Additionally eco products tend to get purchased with other eco products as well, which is also what we could expect considering what we anticipate from certain consumer behaviours.
+When considering the attribute assortativity on the category and the ecology attribute it is apparent that these values are very significant different than the random. This suggest that products within the same categories tend to get purchased together. Additionally eco products tend to get purchased with other eco products as well, which is also what we could expect considering what we anticipate from certain consumer behaviours. The same applies to the Price assortativity where the value is pretty high, indicating that expensive products tend to get purchased with other expensive and vice versa. However considering that all prices in the dataset is kilo-prices these findings might be a bit misleading as the price does not reflect the acutal price paid in the store when shopping.
 
 We selected a random example of an eco-product to inspect its neighbors. The Ecological minced chicken with the product ID 71136 and its neighbors is seen below:
 
@@ -72,11 +72,13 @@ This example supports the conclusions drawn from the assortativity analysis, ind
 
 # __3. Communities__
 
-By identifying communities, we can gain insights into how the certain types of foods are grouped together. This helps in understanding purchasing patterns and preferences that consumers make when going grocery shopping. Because the food
+By identifying communities, we are able to gain insights into how the certain types of foods are grouped together. This helps in understanding purchasing patterns and preferences that consumers make when going grocery shopping. When partitioning the network into communities we use the Louvain Community Detection Algorithm because we want to investigate the underlying and naturally existing structures, and this algorithm finds the non-overlapping communities.
+
+ Because the food-network with its 9.755 nodes is very cluttered to visualize, below the top 5 biggest communities including a total of 5551 nodes is shown:
 
 <figure>
     <img src="/images/Graph_communities.png" width="60%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 5: . </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 5: The top 5 communities in the network, colored by the ID and labeled in the text-analysis. </figcaption>
 </figure>
 
 | **Community ID** | **Community label (made in textanalysis)**      | **Number of Nodes** |
@@ -89,7 +91,7 @@ By identifying communities, we can gain insights into how the certain types of f
 
 <div style="text-align:center;font-style: italic;font-size:smaller;">Table 2. Overview of the size of the top 5 largest communities in the dataset with labels that are made in the NLP-text analysis section</div>
 
-
+The communities are labeled and investigated further in the text-analysis section.
 
 
 # __4. Centrality__
