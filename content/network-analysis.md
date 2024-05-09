@@ -97,7 +97,7 @@ By identifying communities, we can gain insights into how the certain types of f
 The centrality measure give us insight in which nodes play a more dominant role in the network. We use two different centrality measures; closeness and betweenness centrality. Closeness centrality rank each node in the network by how "far" it has to travel to reach other nodes in the network, meaning nodes that do not need to travel far is more central in the network. The score itself is not that relevant for us, as we would like to focus on which nodes that acts as the central hubs in our network. 
 
 The betweenness centrality tell us how many times each node act as a part of the shortest path between two nodes in the network. The nodes with high betweenness score fall in the shortest path between alot of nodes in the network and is therefore considered central. 
-We would like to match the 15 highest scoring nodes from each of the two metrics to see if it is the same nodes that score highest. 
+We would like to match the 14 highest scoring nodes from each of the two metrics to see if it is the same nodes that score highest. 
 
 | Closeness centrality                | Betweenness centrality                   |
 |-------------------------------------|------------------------------------------|
@@ -124,8 +124,8 @@ Since these nodes act as central hubs, we want to investigate how many, and whic
     <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Figure. 4: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
 </figure>
 
-The dataframe is sorted such that the products on the left, are ordered from highest betweenness centrality to lowest of the top 15 highest betweenness centrality in the entire frequently-bought-together network.
-A higher betweenness centrality means that this products is likely to be a bridge between different grocery shopping categories. This means that these products are likely for a consumer to bought toether with a varity of goods. A reason why the cucumber is the highest, could be that it goes into a lot of different dishes, can be a snack and the vegetables are typically the first things a customer sees when entering a supermarket, and it's cheap. All this could explain why it is more likely to be picked up into a basket with a lot of different stuff.
+The dataframe is sorted such that the products on the left, are ordered from highest betweenness centrality to lowest of the top 14 highest betweenness centrality in the entire frequently-bought-together network.
+A higher betweenness centrality means that this product is likely to be a bridge between different grocery shopping categories. This mean that these products are likely for a consumer to bought together with a varity of goods. A reason why the cucumber is the highest, could be that it goes into a lot of different dishes, can be a snack and the vegetables are typically the first things a customer sees when entering a supermarket, and it's cheap. All this could explain why it is more likely to be picked into the basket with a lot of different wares.
 
 Based on the dataframe, we can see that several products have high betweenness centrality, meaning they are often bought together with products from other categories. These products include:
 
@@ -137,5 +137,5 @@ Based on the dataframe, we can see that several products have high betweenness c
 - Remoulade (remoulade øko)
 - Wheat flour (hvedemel øko)
 
-These products could be considered "bridge" products that connect different shopping categories. For example, organic cucumbers (agurk øko) appear in the "Healthy", "Organic", "Everyday", and "Beverages" communities. This suggests that organic cucumbers are often bought together with a variety of other products, such as healthy snacks, other organic items, everyday staples, and beverages.
+These products could be considered "bridge" products that connect different shopping categories. For example, organic cucumbers (agurk øko) appear in the "Healthy", "Organic", "Everyday", and "Beverages" communities. This suggests that organic cucumbers are often bought together with a variety of other products, such as healthy snacks, other organic items, everyday stables, and beverages.
 
