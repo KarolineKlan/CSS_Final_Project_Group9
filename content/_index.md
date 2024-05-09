@@ -17,8 +17,8 @@ The idea behind the project is to investigate if purchasing decisions are influe
 In the following pages, we will conduct a thorough assesment of three main areas:
 
 1. How the data used in the study is collected using webscraping tools on the [**BilkaToGo website**](https://www.bilkatogo.dk/) and calling the [**Salling Group API**](https://developer.sallinggroup.com/api-reference).
-2. A Network Analysis including .........
-3. Using NLP-tools to ........
+2. A Network Analysis exploring degree distribution and assortativity, and the identification of communities and central food items within the network.
+3. Using NLP-tools to analyze the product descriptions, to identify the words that are unique to each community within the network, providing insights into consumer buying patterns and the characteristics of frequently bought-together products.
 
 
 ## [Explainer Notebook](explainer-notebook.html)
