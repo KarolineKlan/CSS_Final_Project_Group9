@@ -136,22 +136,8 @@ We set up a loop classifying each community based on the top 100 TF-IDF words wi
 
 This was done in order to label get an unbiased label on each community based on 100 words which that many words can be somewhat of a challenge to do for a human. Furthermore, we can quickly see what products that link communities together and what type of commmunities the products link together with a one word category. You can read more about this analysis in the [Explainer Notebook](explainer-notebook.html) under the network analysis.
 
-<figure>
+<!-- <figure>
     <img src="/images/betweenness.png" width="80%" alt="Scraping">
     <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Figure. 4: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
-</figure>
+</figure> -->
 
-The dataframe is sorted such that the products on the left, are ordered from highest betweenness centrality to lowest of the top 15 highest betweenness centrality in the entire frequently-bought-together network.
-A higher betweenness centrality means that this products is likely to be a bridge between different grocery shopping categories. This means that these products are likely for a consumer to bought toether with a varity of goods. A reason why the cucumber is the highest, could be that it goes into a lot of different dishes, can be a snack and the vegetables are typically the first things a customer sees when entering a supermarket, and it's cheap. All this could explain why it is more likely to be picked up into a basket with a lot of different stuff.
-
-Based on the dataframe, we can see that several products have high betweenness centrality, meaning they are often bought together with products from other categories. These products include:
-
-- Cucumbers (agurk)
-- Butter (smørbar)
-- Organic cucumbers (agurk øko)
-- Organic eggs (æg m/l øko)
-- Grated oatmeal (finvalsede havregryn øko)
-- Remoulade (remoulade øko)
-- Wheat flour (hvedemel øko)
-
-These products could be considered "bridge" products that connect different shopping categories. For example, organic cucumbers (agurk øko) appear in the "Healthy", "Organic", "Everyday", and "Beverages" communities. This suggests that organic cucumbers are often bought together with a variety of other products, such as healthy snacks, other organic items, everyday staples, and beverages.

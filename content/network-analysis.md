@@ -116,7 +116,26 @@ We would like to match the 15 highest scoring nodes from each of the two metrics
 | remoulade øko                       | peberfrugter røde                        |
 | mørk pålægschokolade 53% kakao øko  | tonic                                    |
 
+As seen in the table, many nodes re-appear, with the only difference being 'rosiner øko' (raisins eco) and 'tonic'.
 
-Since these nodes act as central hubs, we want to investigate how many, and which communities each node connects with, as it will give insights as to how these wares are used in different ways. 
+Since these nodes act as central hubs, we want to investigate how many, and which communities each node connects with, as it will give insights as to how these wares are used in different ways. In our text analysis we create community labels (as seen above), with which we can clarify the essence of each community. We use the resulting table here to illustrate the different communities our top nodes in betweenness bridge across:
+<figure>
+    <img src="/images/betweenness.png" width="80%" alt="Scraping">
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Figure. 4: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
+</figure>
 
-JACK SKRIVER HER!
+The dataframe is sorted such that the products on the left, are ordered from highest betweenness centrality to lowest of the top 15 highest betweenness centrality in the entire frequently-bought-together network.
+A higher betweenness centrality means that this products is likely to be a bridge between different grocery shopping categories. This means that these products are likely for a consumer to bought toether with a varity of goods. A reason why the cucumber is the highest, could be that it goes into a lot of different dishes, can be a snack and the vegetables are typically the first things a customer sees when entering a supermarket, and it's cheap. All this could explain why it is more likely to be picked up into a basket with a lot of different stuff.
+
+Based on the dataframe, we can see that several products have high betweenness centrality, meaning they are often bought together with products from other categories. These products include:
+
+- Cucumbers (agurk)
+- Butter (smørbar)
+- Organic cucumbers (agurk øko)
+- Organic eggs (æg m/l øko)
+- Grated oatmeal (finvalsede havregryn øko)
+- Remoulade (remoulade øko)
+- Wheat flour (hvedemel øko)
+
+These products could be considered "bridge" products that connect different shopping categories. For example, organic cucumbers (agurk øko) appear in the "Healthy", "Organic", "Everyday", and "Beverages" communities. This suggests that organic cucumbers are often bought together with a variety of other products, such as healthy snacks, other organic items, everyday staples, and beverages.
+
