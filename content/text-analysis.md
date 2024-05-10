@@ -3,7 +3,7 @@ title: Text analysis
 prev: network-analysis
 ---
 
-To gain insights into consumer buying patterns, we analyze the words that characterize certain natural communities within the frequently-bought-together network. The descriptions are a small text about a certain procuts typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in. This analysis helps us understand what underlying phrases and words characterize items that are frequently purchased together.
+To gain insights into consumer buying patterns, we analyze the words that characterize certain natural communities within the frequently-bought-together network. The descriptions are a small text about each product typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in. This analysis helps us understand what underlying phrases and words characterize items that are frequently purchased together.
 
 In order to do this, the text-analysis is made in 3 steps:
 
