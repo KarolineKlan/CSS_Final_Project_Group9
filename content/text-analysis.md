@@ -131,7 +131,7 @@ We set up a loop classifying each community based on the top 100 TF-IDF words wi
 | 24               | Organic        |
 
 
-This approach provided an unbiased label for each community based on the top 100 words, a task that would be challenging and longsome for a human to do. Additionally, this method allowed us to quickly identify products that link communities, as seen in the network analysis part 4. You can see a wordcloud for all the 25 different communities and read more about this analysis in the [**Explainer Notebook**](https://karolineklan.github.io/CSS_Final_Project_Group9/explainer-notebook.html) under the text-analysis.
+This approach provided an unbiased label for each community based on the top 100 words, a task that would be challenging and longsome for a human to do. Additionally, this method allowed us to quickly identify products that link communities, as seen in the network analysis part 4. You can see a wordcloud for all the 25 different communities and read more about this analysis in the [**Explainer Notebook**](/explainer-notebook.html) under the text-analysis.
  
 <!-- <figure>
     <img src="/images/betweenness.png" width="80%" alt="Scraping">
