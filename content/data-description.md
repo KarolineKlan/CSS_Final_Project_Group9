@@ -38,7 +38,7 @@ When collecting the product descriptions, it was discovered that some items did 
 
 The [Salling Group API](https://developer.sallinggroup.com/api-reference), specifically the [frequently bought together endpoint](https://developer.sallinggroup.com/api-reference#frequently-bought-together) was used to create the network linking two items if they were on the same 'frequently bough together' list. In this process **any connection of frequently bought together items where one of the nodes did not belong to the foods category was not included in the network.**
 
-See the [**Explainer Notebook**](explainer-notebook.html) for more details in how the data was scraped and preprocessed in order to be used and analysed in the project.
+See the explainer notebook for more details in how the data was scraped and preprocessed in order to be used and analysed in the project.
 
 # __The final preprocessed and cleaned data__
 
