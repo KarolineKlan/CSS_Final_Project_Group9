@@ -3,11 +3,11 @@ title: Text analysis
 prev: network-analysis
 ---
 
-To gain insights into consumer buying patterns, we analyze the words that characterize certain natural communities within the frequently-bought-together network. The descriptions are a small text about each product typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in. This analysis helps us understand what underlying phrases and words characterize items that are frequently purchased together.
+To gain insights into consumer buying patterns, we analyze the words that characterize certain natural communities within the frequently-bought-together network. The descriptions are a small text about each product typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in. This analysis helps us understand what underlying words characterize items that are frequently purchased together.
 
 In order to do this, the text-analysis is made in 3 steps:
 
-1. The product descriptions are tokenized and the distribution of the descriptions and the types of words are analysed. More details about this step can be found in the Explainer Notebook.
+1. The product descriptions are tokenized and the distribution of the descriptions and the frequency of words are analysed. More details about this step can be found in the Explainer Notebook.
 2. The TF-IDF scores are calculated and the most characterizing words for each community is visualized using wordclouds.
 3. OpenAI's API is called using ChatGPT 3.5 to label the communites based on the top 100 TF-IDF words.
 
