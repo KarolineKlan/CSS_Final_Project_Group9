@@ -7,7 +7,11 @@ next: network-analysis
 
 # __Data collection__
 
-The data used in the project was collected from the [BilkaToGo website](https://www.bilkatogo.dk/) using the python webscraping libraries [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) and [Selenium](https://selenium-python.readthedocs.io/). The scraping was done in 2 steps. Firstly the Product Id's, the Categories and the Price of the products was collected. Secondly the Product Id's was used to collect the product descripstions for each item. 
+The data used in the project was collected from the [BilkaToGo website](https://www.bilkatogo.dk/) using the python webscraping libraries [Beautiful Soup](https://pypi.org/project/beautifulsoup4/) and [Selenium](https://selenium-python.readthedocs.io/) because of the site's heavy reliance on JavaScript. The scraping was done in 2 steps.
+
+1. The Product Id's, the Categories and the Price of all products on the site was collected. 
+2. The Product Id's was used to collect the product descripstions for each item of the food-products only. 
+
 The below figure shows what specific attributes was collected in the scraping:
 
 <figure>
@@ -27,15 +31,15 @@ Each attribute was collected and saved to CSV files, whereafter data cleaning an
 
 
 
-For the scope of this project it was decided only to focus on the 10.269 colleced datapoints that belonged to the Foods category, and it was only for this category that the product descriptions were scraped.
+For the scope of this project, it was decided to focus solely on the 10.269 collected data points that belonged to the Foods category. Product descriptions were scraped exclusively for this category.
 
 # __Data cleaning__
-When collecting the product descriptions it was discovered that some items did not have any descriptions. Additionally it was discovered that some descriptions involved generic descriptions of the brand or retailer of the product. This brand discription did not include any information of the product itself, and therefore it is not of interest for the textual analysis. Additionally some items had a very short description with very little meaningful information. It was decided that **all product descriptions got striped from long generic brand descriptions and any product description less than 30 words long were filtered out**. 
+When collecting the product descriptions, it was discovered that some items did not have any descriptions at all. Additionally, some descriptions contained generic information about the brand or retailer rather than the product itself, which was not useful for our textual analysis. Furthermore, some items had very short descriptions with minimal meaningful information. Therefore, **it was decided to strip all product descriptions of long, generic brand information and filter out any descriptions that were less than 30 words long.** 
 
-The [Salling Group API](https://developer.sallinggroup.com/api-reference), specifically the [frequently bought together endpoint](https://developer.sallinggroup.com/api-reference#frequently-bought-together) was used to create the network linking two items if they were frequently bought together. In this process **any connection of frequently bought together items where one of the nodes did not belong to the foods category was not included in the network.**
+The [Salling Group API](https://developer.sallinggroup.com/api-reference), specifically the [frequently bought together endpoint](https://developer.sallinggroup.com/api-reference#frequently-bought-together) was used to create the network linking two items if they were on the same 'frequently bough together' list. In this process **any connection of frequently bought together items where one of the nodes did not belong to the foods category was not included in the network.**
 
 See the [**Explainer Notebook**](explainer-notebook.html) for more details in how the data was scraped and preprocessed in order to be used and analysed in the project.
 
-# The final preprocessed and cleaned data
+# __The final preprocessed and cleaned data__
 
-After the cleaning proces a dataset consisting of 9.755 food products where each product constitute a node in a network with 74.180 links. The data can be downloaded from [**INDSÆT LINK TIL DATASET**](). One important note of the collected data is that the items on the BilkaToGo is updated and changed on an ongoing basis, so some of the items in the data that was collected on the **17th of April 2024** might not be on the website today. 
+After the cleaning process, the dataset consists of 9,755 food products, with each product constituting a node in a network containing 74,180 links. The dataset can be downloaded from [**this link**](https://drive.google.com/drive/folders/1AuX2D92FGSTjIBpWor3D7acklpOoaa6C?usp=sharing). It is important to note that the items on BilkaToGo are continuously updated and changed, so some of the items collected in the dataset on **April 17, 2024** might no longer be available on the website today.

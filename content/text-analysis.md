@@ -3,13 +3,22 @@ title: Text analysis
 prev: network-analysis
 ---
 
-We would like to get an insight in the consumer buying patterns and we could get this insight by analyzing the the words that characterize certain natural communities within the frequently-bought-together network. Here, we might get som insight in what makes products frequently bought together. In order to do this, we use the TF-IDF scores on the tokenized product descriptions.
-These TF-IDF scores of words help us identify what words specifically are unique for each community.
-The TF-IDF scores of words for the top 9 communities can be seen below:
+To gain insights into consumer buying patterns, we analyze the words that characterize certain natural communities within the frequently-bought-together network. The descriptions are a small text about a certain procuts typically explaining what the product tastes like, and what occasions/setting they are typically enjoyed in. This analysis helps us understand what underlying phrases and words characterize items that are frequently purchased together.
 
-| Community 16 TF-IDF Words | Community 24 TF-IDF Words | Community 18 TF-IDF Words |
+In order to do this, the text-analysis is made in 3 steps:
+
+1. The product descriptions are tokenized and the distribution of the descriptions and the types of words are analysed. More details about this step can be found in the Explainer Notebook.
+2. The TF-IDF scores are calculated and the most characterizing words for each community is visualized using wordclouds.
+3. OpenAI's API is called using ChatGPT 3.5 to label the communites based on the top 100 TF-IDF words.
+
+  
+# __2. TF-IDF scores and Wordclouds__
+
+These TF-IDF scores help us identify which words are specifically unique to each community. The result from the text-analysis and the top TF-IDF scores of words for the top 9 communities can be seen below:
+
+| **Community 16 TF-IDF Words** | **Community 24 TF-IDF Words** | **Community 18 TF-IDF Words** |
 |----------------------------|----------------------------|----------------------------|
-| lækker 0.0126             | økologisk 0.0119           | gin 0.0129                |
+| lækker  0.0126             | økologisk 0.0119           | gin 0.0129                |
 | salling 0.0122            | salling 0.0113             | vinen 0.0115              |
 | smag 0.0119               | smag 0.0112                | noter 0.0105              |
 | prøv 0.0110               | økologiske 0.0112          | smag 0.0104               |
@@ -19,7 +28,7 @@ The TF-IDF scores of words for the top 9 communities can be seen below:
 | ved 0.0097                | øko 0.0108                 | nyd 0.0093                |
 | lidt 0.0097               | retter 0.0106              | smagen 0.0092             |
 
-| Community 19 TF-IDF Words | Community 3 TF-IDF Words | Community 22 TF-IDF Words |
+| **Community 19 TF-IDF Words** | **Community 3 TF-IDF Words** | **Community 22 TF-IDF Words** |
 |----------------------------|--------------------------|---------------------------|
 | chokolade 0.0154           | oliven 0.0162            | smag 0.0140               |
 | lakrids 0.0148             | lækker 0.0140            | desserter 0.0126          |
@@ -31,7 +40,7 @@ The TF-IDF scores of words for the top 9 communities can be seen below:
 | nyd 0.0122                 | cremet 0.0106             | dine 0.0111               |
 | lækre 0.0120               | sammen 0.0106             | is 0.0106                 |
 
-| Community 9 TF-IDF Words | Community 8 TF-IDF Words | Community 17 TF-IDF Words |
+| **Community 9 TF-IDF Words** | **Community 8 TF-IDF Words** | **Community 17 TF-IDF Words** |
 |--------------------------|--------------------------|---------------------------|
 | kaffe 0.0134             | lækker 0.0129            | retten 0.0152             |
 | kondi 0.0126             | snack 0.0125             | lækker 0.0140             |
@@ -43,69 +52,58 @@ The TF-IDF scores of words for the top 9 communities can be seen below:
 | forfriskende 0.0117      | minutter 0.0110          | giver 0.0120               |
 | mælk 0.0109              | økologisk 0.0109         | frisk 0.0117               |
 
-And the top 3 most frequently bought togehter product for each of those communities
+<div style="text-align:center;font-style: italic;font-size:smaller;">Table 4. Overview of the top 9 words based in TF-IDF scores for all the top 9 communities.</div>
 
-| Community 16 top products | Community 24 top products | Community 18 top products |
-|----------------------------|----------------------------|----------------------------|
-| agurk                      | finvalsede havregryn øko   | tonic                      |
-| agurk                      | æg m/l øko                 | london dry gin             |
-| skrabeæg m/l              | hakkede tomater øko        | indian tonic water         |
-
-| Community 19 top products  | Community 3 top products  | Community 22 top products |
-|---------------------------- |-------------------------- |---------------------------|
-| lakridsbolcher             | fyldte røde peberfrugter m. flødeost  | husblas                    |
-| tappsy                     |  lufttørret italiensk bresaola i skiver             | flormelis                  |
-| chocofant                  | serranoskinke, salchichon og chorizo    | sukker                     |
+And the top 3 most frequently bought togehter products for each of those communities are seen in the tables below:
+<figure>
+    <img src="/images/TopProducts.png" width="80%" alt="Scraping">
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 7: Top 3 products for each of the Top 9 communities. All images are taken from the BilkaToGo website using the product ID's.  </figcaption>
+</figure>
 
 
-| Community 9 top products  | Community 8 top products  | Community 17 top products |
-|-------------------------- |-------------------------- |---------------------------|
-| tyggegummi m. frugtsmag   | smørepålæg vegansk        | appelsinjuice fra   koncentrat      |
-| coca cola                  | vegetarpålæg i skiver m. peber     |       solbærmarmelade          |
-| sportssodavand sukkerfri  |    creme fraiche dressing                |       appelsinmarmelade     |
-
-
-We see some different patterns that we can associate from each other in each communities. We see some clear ones in e.g. community 24 that has ecology, and community 19 which has a lot of top words that can make this community be interperated as a candy-like community, with top words like 'mix', 'liquorice', 'milk-chocolate' etc. But to get a better overview of the top words within each community, let's look at the top TF-IDF words in word clouds for the top 9 communities:
+We see some distinct patterns that that differentiate each community. For instance, community 24 is clearly associated with ecological products, while community 19 appears to be centered around candy, with prominent words like 'mix,' 'liquorice,' and 'milk-chocolate.' To gain a better understanding of the defining characteristics of each community, we will examine the top TF-IDF words in word clouds for the top 9 communities.
 
 <figure>
     <img src="/images/wordcloud_9.png" width="80%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 3: Worldcloud showing the top TF-IDF word for the top 9 communities with the top 3 most frequently bought together products above them.  </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 8: Worldcloud showing the top TF-IDF word for the top 9 communities with the top 3 most frequently bought together products above them.  </figcaption>
 </figure>
 
-Here we can distinguish betwween the top 9 communities for the words that are specif for each community. Which makes us able to pinpoint each buying pattern when visiting a Salling store. To further help with the distinguishing of each community we made an API call for chatGPT 3.5 to classify each community based on the top 100 TF-IDF words for that specific community. The classifications for each community are:
+Here, we can distinguish between the top 9 communities based on the words specific to each community. This enables us to pinpoint distinct buying patterns for customers visiting a Salling store. To further help with the distinguishing of each community we made an API call for chatGPT 3.5 to classify each community based on the top 100 TF-IDF words for that specific community (see specifics in the next section). The classifications for each community are:
 
 
 1. Community 16: 'Everyday'
-> This community's top TF-IDF words include: 'Salling', 'Delicious', 'taste', 'enjoy', 'together'. This makes sense that this is the biggest community within the frequently-bought-together network, as when a consumer buys food, they usually buys in bulk in mealplans for the whole week, and [this study](https://ijbnpa.biomedcentral.com/articles/10.1186/s12966-017-0461-7) showed that atleast 57% of families buy after weekly mealplans (across the US). This means that atleast the majority buy a lot of diverse foods for the 'everyday' shopping, and is why this community is the largest. The products with the highest degrees within this community are two different brands of (agurk) cucumbers, and normal (skrabeæg) eggs, which makes sense as these products are used in a lot of different dishes.
+> This community's top TF-IDF words include: 'Salling', 'Delicious', 'taste', 'enjoy', 'together'. This makes sense that this is the largest community within the frequently-bought-together network, as one could imagine that consumers often buy groceries in bulk for weekly meal plans. According to [this study](https://ijbnpa.biomedcentral.com/articles/10.1186/s12966-017-0461-7) [[5](#chapter5)] at least 57% of families plan their meals weekly (across the US). This wordcloud indicates that the majority of consumers purchase a diverse range of foods for everyday shopping, which is why this community is the largest. The products with the highest degrees within this community are two different brands of (agurk) cucumbers, and normal eggs (skrabeæg), which makes sense as these products are used in a lot of different dishes.
 
 2. Community 24: 'Organic'
-> This community's top TF-IDF words include: 'Salling', 'Ecological', 'Taste', 'Cofee'. This community represents a lot of what community 16 does of everyday bought items, but include ecological items. This community makes sense, as it is still the same reasoning with consumers buying for mealplans, but people who buy some ecological items, tend to buy all ecological items together, you can read more about the assortativity analysis in the explainer notebook. The products with the highest degrees in this community is eco oatmeal, eco eggs, and eco tomato.
+> This community's top TF-IDF words include: 'Salling', 'Ecological', 'Taste', 'Coffee'. This community represents a lot of what community 16 does of everyday bought items, but include ecological items. It aligns with the idea that consumers buying for meal plans as explained in community 16 but here organic options are chosen consistently. People who purchase some organic items tend to buy all organic items together, as supported ealier by our assortativity analysis. The products with the highest degrees in this community are eco oatmeal, eco eggs, and eco tomatoes.
 
 3. Community 18: 'Beverages'
-> This community's top TF-IDF words include: 'Gin', 'Wine', 'notes', 'taste'. This community describes a consumer buying drinks or wine for a maybe a night with guests, indicated by one of the top words 'Together' that would indicate that the drinks are to be enjoyed with company. This community is also large because when buying drinks consumers tend to buy things together because drinks are a comibnation of different products mixed together. Hence, why the word 'Gin' is the largest in the wordcloud, as Gin & Tonic is a very common drink especially in denmark. This is further shown by the top 3 products with higest degree in this community which is two types of tonic water and London dry gin.
+> This community's top TF-IDF words include: 'Gin', 'Wine', 'notes', 'taste'. This community describes consumers buying beverages, possibly for social gatherings, as indicated by the word 'Together', suggesting that these drinks are meant to be enjoyed with company.  This community is also large because when buying drinks consumers tend to buy things together because drinks are a combination of different products mixed together. Hence, why the word 'Gin' is the largest in the wordcloud, as Gin & Tonic is a very common drink especially in Denmark. This is further shown by the top 3 products with higest degree in this community which is two types of tonic water and London dry gin.
 
 4. Community 19: 'Indulgence'
-> This community's top TF-IDF words include: 'liquorice', 'Mix', 'Milkchocolate', 'Chocolate'. This is the 4th largest community in the network, and makes sense because shops put Candy and other indulgences together in the same spot, and together with the urge of eating a lot of sugary stuff for a movienight or party, makes the indulgence community rather large. The top products in this community are 'liquorice hard candy', 'tappsy' and 'chocofants'.
+> This community's top TF-IDF words include: 'liquorice', 'Mix', 'Milkchocolate', 'Chocolate'. As the fourth largest community in the network, it makes sense because stores often place candy and other indulgent treats together. The tendency with the urge of eating and purchasing various sugary snacks for movie nights or parties contributes to the size of this community. The top products in this community are 'liquorice hard candy', 'tappsy', and 'chocofants'.
 
 5. Community 3: 'Gourmet' / 'Tapas'
-> This community was classified as 'Gourmet' but we thought that 'Tapas' was a more fitting category for this community. This community's top TF-IDF words include: 'Olives', 'Cheese', 'Taste' and 'delicious'. This community is less large as it is more of a niche category. But for tapas certain things are tend to be bought together like the top frequently-bought-together items in this community: 'Bell pepper', 'Italian bresaola', and 'italian serrano ham'.
+> This community was classified by ChatGPT as 'Gourmet' but we thought that 'Tapas' was a more fitting category. This community's top TF-IDF words include: 'Olives', 'Cheese', 'Taste' and 'delicious'. Although this community is smaller and more niche, it represents items commonly bought together for tapas. The top frequently bought together items in this community are 'Bell pepper', 'Italian bresaola', and 'Italian serrano ham'.
 
 6. Community 22: 'Baking' 
-> This community's top TF-IDF words include: 'Desert', 'Cake', 'Oetker' and 'Delicious'. This community would be associated with a buying patterns of a consumer that wants to bake. This is shown by the top words in the community and 'Oetker' is a brand that is used for baking. These things are often bought together as you typically need specific things for a recipe when baking. This conclusion is further enforced when looking at the top products in this community which is 'powdered sugar', 'gelatin' and 'sugar'.
+> This community's top TF-IDF words include: 'Desert', 'Cake', 'Oetker' and 'Delicious'. This community would be associated with a buying patterns of a consumer that wants to bake.'Oetker' is a well-known brand for baking products, reinforcing this association. Baking often requires specific ingredients for recipes, which are typically bought together.  This conclusion is further enforced when looking at the top products in this community which is 'powdered sugar', 'gelatin' and 'sugar'.
 
 7. Community 9: 'Energy'
-> This community's top TF-IDF words include: 'Energydrink', 'Faxe kondi', Rerfreshing'. This community is identified by the need of a refreshment or energy like some energy drink or soda. The reason why this community is rather large is that consumers typically buys refreshments to more people likes guests where people prefer different things to drink. A reason why it is not higher up in size, is that sometimes people just go to the supermarket to buy a single refreshment and not a lot of other products. The top products in this community include: 'Gum with fruit flavor', 'Coca Cola', and 'Sportsdrink'
+> This community's top TF-IDF words include: 'Energydrink', 'Faxe kondi', Rerfreshing'. It is characterized by the need for refreshments or energy-boosting drinks like energy drinks or sodas. A reason why this community is rather large might include the hypothesis that consumers typically buys refreshments to multiple people, such as guests, who have different preferences. However, a reason that it is not as large of a community might be because sometimes people visit the supermarket to buy just a single refreshment and not many other products. The top products in this community include: 'Gum with fruit flavor', 'Coca Cola', and 'Sportsdrink'
 
 8. Community 8: 'Vegan' 
-> This community's top TF-IDF words include: 'Vegan', 'Delicious', 'Ecology' and 'Enjoy'. This community is distinguished by the vegan aspect. People who are vegan tend to buy other vegan and ecology groceries together. A reason for the not so large community here is that there are not such a vast selection of vegan foods in the grocery shops yet and vegan consumers usually only stick to buying vegan groceries and not other non-vegan products. The top products in this community are: 'vegan butter', 'vegan toppings' and 'creme fraiche dressing'.
+> This community's top TF-IDF words include: 'Vegan', 'Delicious', 'Ecology' and 'Enjoy'. This community is distinguished by the vegan aspect. People who are vegan tend to buy other vegan and organic groceries together. A reason for the relative smaller size of this community might be due to the limited selection of vegan foods available in grocery stores and the tendency of vegan consumers to buy exclusively vegan products. The top products in this community are: 'vegan butter', 'vegan toppings' and 'creme fraiche dressing'.
 
 9. Community 17: 'Healthy'
-> This community's top TF-IDF words include: 'Salad', 'The dish', 'Enjoy'. This community is classified as a healthy community. Here a conclusion to this community would be that certain consumers buy very healthy products like salads and healthy juices as indicated by the word 'innocent' which is a type of brand for healthy juices. The top bought products in this community is: 'orange juice', blackcurrants- and orange marmelade.  
+> This community's top TF-IDF words include: 'Salad', 'The dish', 'Enjoy'. This community is classified as a healthy community reflecting consumers who buy nutritious products like salads and healthy juices.The word 'innocent'—a brand known for healthy juices—also appears frequently. The top purchased products in this community are 'orange juice', and 'blackcurrants' and 'orange marmalade'. This suggests a pattern of buying items that contribute to a health-conscious diet.
 
-We set up a loop classifying each community based on the top 100 TF-IDF words with OpenAI's ChatGPT using their API to call the gpt-3.5-turbo model. We chose to use GPT-3.5 because this is a very cableable model at this low level task and because it is cheap in operation. We run a simple prompt with instructions to use a single word to classify each community, and we use the top 100 words because of token limits and at some point the TF-IDF score for these word become too low. We realize that chatGPT does not have a way of setting a seed, so the output could vary when running this code again. To mitigate this we put the 'temperature' variable that controls creativity in the llm to 0. However, this still didn't give consistent results so without spending the majority of the timeframe in this project and throughout the analysis we use this mapping of the communities that was the most consistent in the outputs. This was the categories for each community:
+# __Labeling of communities using OpenAI's API__
 
-| Community Number | Community Category |
-|------------------|----------------|
+We set up a loop classifying each community based on the top 100 TF-IDF words with OpenAI's ChatGPT using their API to call the gpt-3.5-turbo model. We chose to use GPT-3.5 for this task because it is a highly capable model for such low-level tasks and is cost-effective. We ran a simple prompt with instructions to use a single word to classify each community, and we use the top 100 words because of token limits and at some point the TF-IDF score for these word become too low. We realize that chatGPT does not have a way of setting a seed, so the output could vary when running this code again. To mitigate this we put the 'temperature' variable that controls creativity in the llm to 0. However, this still didn't give consistent results. To avoid spending excessive time on this part of the project, we used the most consistent community mappings from multiple outputs. The mapped categories for each community can be seen in the below table:
+
+| **Community Number** | **Community Label** |
+|:------------------:|:----------------:|
 | 0                | Convenience    |
 | 1                | Beer           |
 | 2                | Coffee         |
@@ -132,10 +130,9 @@ We set up a loop classifying each community based on the top 100 TF-IDF words wi
 | 23               | Coffee         |
 | 24               | Organic        |
 
-> To see a wordcloud for all the 25 different communities you can look at our [Explainer Notebook](explainer-notebook.html) under the text analysis.
 
-This was done in order to label get an unbiased label on each community based on 100 words which that many words can be somewhat of a challenge to do for a human. Furthermore, we can quickly see what products that link communities together and what type of commmunities the products link together with a one word category. You can read more about this analysis in the [Explainer Notebook](explainer-notebook.html) under the network analysis.
-
+This approach provided an unbiased label for each community based on the top 100 words, a task that would be challenging and longsome for a human to do. Additionally, this method allowed us to quickly identify products that link communities, as seen in the network analysis part 4. You can see a wordcloud for all the 25 different communities and read more about this analysis in the [Explainer Notebook](explainer-notebook.html) under the text-analysis.
+ 
 <!-- <figure>
     <img src="/images/betweenness.png" width="80%" alt="Scraping">
     <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Figure. 4: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
