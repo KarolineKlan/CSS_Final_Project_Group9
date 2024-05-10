@@ -24,5 +24,5 @@ In the following pages, we will conduct a thorough assesment of three main areas
 3. **Text Analysis:** Utilizing NLP tools to analyze product descriptions, identifying unique words for each community within the network, and providing insights into consumer buying patterns and the characteristics of frequently bought-together products.
 
 
-For more details, please refer to the [**Explainer Notebook**](../explainer-notebook.html).
+For more details, please refer to the [**Explainer Notebook**](explainer-notebook.html).
 
