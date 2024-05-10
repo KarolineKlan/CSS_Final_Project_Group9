@@ -5,7 +5,7 @@ relativeURLs = true
 theme = "theme" 
 [params]
     authors = ["Karoline Klan Hansen", "Kristoffer Helms Kjaer", "Jacob Seerup Kirkeby"]
-    notebook = "/explainer_notebook.html"
+    notebook = "/explainer-notebook.html"
     data = "https://drive.google.com/drive/folders/1AuX2D92FGSTjIBpWor3D7acklpOoaa6C?usp=sharing"
     github = "https://github.com/KarolineKlan/CSS_Final_Project_Group9"
     [[params.nav]]
