@@ -65,9 +65,9 @@ We selected a random example of an eco-product to inspect its neighbors. The Eco
 
 <figure>
     <img src="/images/Ecology_assort.png" width="70%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 4: An example of an ecological product and its 10 neighbors. </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">An example of an ecological product and its 10 neighbors. </figcaption>
 </figure>
-Figure 4 illustrates how an ecological product is connected to other eco-products, as all its neighbors in this example are also ecological. Additionally, this demonstrates that many neighbors of this product within the meat category are also in the same category. 
+Above image illustrates how an ecological product is connected to other eco-products, as all its neighbors in this example are also ecological. Additionally, this demonstrates that many neighbors of this product within the meat category are also in the same category. 
 This example supports the conclusions drawn from the assortativity analysis, indicating a general trend in the entire network where items within the same category and eco-products tend to be purchased together.
 
 # __3. Communities__
@@ -78,7 +78,7 @@ By identifying communities, we are able to gain insights into how the certain ty
 
 <figure>
     <img src="/images/Graph_communities.png" width="60%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 5: The top 5 communities in the network, colored by the ID and labeled in the text-analysis. </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 4: The top 5 communities in the network, colored by the ID and labeled in the text-analysis. </figcaption>
 </figure>
 
 | **Community ID** | **Community label (made in textanalysis)**      | **Number of Nodes** |
@@ -124,7 +124,7 @@ As seen in the table, many nodes re-appear, with the only difference being 'rosi
 Since these nodes act as central hubs, we want to investigate how many, and which communities each node connects with, as it will give insights as to how these products are used in different ways. In our text analysis we create community labels,  which is used to clarify the essence of each community. We use the resulting table here to illustrate how the different betweenness hubs bridge accros communities:
 <figure>
     <img src="/images/betweenness.png" width="80%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Figure. 6: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">  Table. 4: A dataframe showing the top betweeness centrality products in the network and the communities they link.  </figcaption>
 </figure>
 
 The dataframe is sorted such that the products on the left, are ordered from highest betweenness centrality to lowest of the top 14 highest betweenness centrality in the entire frequently-bought-together network.

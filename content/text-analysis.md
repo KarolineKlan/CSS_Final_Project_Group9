@@ -57,7 +57,7 @@ These TF-IDF scores help us identify which words are specifically unique to each
 And the top 3 most frequently bought togehter products for each of those communities are seen in the tables below:
 <figure>
     <img src="/images/TopProducts.png" width="80%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 7: Top 3 products for each of the Top 9 communities. All images are taken from the BilkaToGo website using the product ID's.  </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Table 5: Top 3 products for each of the Top 9 communities. All images are taken from the BilkaToGo website using the product ID's.  </figcaption>
 </figure>
 
 
@@ -65,7 +65,7 @@ We see some distinct patterns that that differentiate each community. For instan
 
 <figure>
     <img src="/images/wordcloud_9.png" width="80%" alt="Scraping">
-    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 8: Worldcloud showing the top TF-IDF word for the top 9 communities with the top 3 most frequently bought together products above them.  </figcaption>
+    <figcaption style="text-align:center;font-style: italic;font-size:smaller;">Figure. 5: Worldcloud showing the top TF-IDF word for the top 9 communities with the top 3 most frequently bought together products above them.  </figcaption>
 </figure>
 
 Here, we can distinguish between the top 9 communities based on the words specific to each community. This enables us to pinpoint distinct buying patterns for customers visiting a Salling store. To further help with the distinguishing of each community we made an API call for chatGPT 3.5 to classify each community based on the top 100 TF-IDF words for that specific community (see specifics in the next section). The classifications for each community are:
